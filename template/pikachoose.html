@@ -1,0 +1,40 @@
+% my ($arg) = @_;
+% my $css = $arg->{css} || '/stylesheets/pikachoose.css';
+% my $js = $arg->{js} || '/javascripts/jquery.pikachoose.js';
+
+<html>
+	<header>
+		<title> DictyBase Image gallery </title>
+		<link type="text/css" href="<%= $css %>" rel="stylesheet"/>
+		<script type="text/javascript"
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"
+		/></script>
+		<script type="text/javascript" src="<%= $js %>"/></script>
+		<script language="javascript">
+			$(document).ready(
+				function(){
+					$("#gallery").PikaChoose(
+						{
+							autoPlay: false, 
+							carousel: true,  
+							carouselOptions:{wrap:'circular'}, 
+							transition: [-1], 
+							show_captions: false, 
+							IESafe: true
+						});
+			});
+		</script>
+	</header>
+	<body>
+		<div class="pikachoose">
+			<ul id="gallery" class="jcarousel-skin-pika">
+				% for my $img (@{$arg->{images}}) {
+					<li>
+						<a href="#"><img src="<%= $img %>"/></a>
+						<span>Image title </span>
+					</li>
+				% }	
+			</ul>
+		</div>
+	</body>
+</html>

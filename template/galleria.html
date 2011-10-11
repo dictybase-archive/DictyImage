@@ -1,0 +1,32 @@
+% my ($arg) = @_;
+% my $css = $arg->{css} || '/stylesheets/galleria.classic.css';
+% my $js = $arg->{js} || '/javascripts/galleria-1.2.5.min.js';
+% my $theme = $arg->{theme} || '/javascripts/galleria.classic.min.js';
+<html>
+	<head>
+		<title> DictyBase Image gallery </title>
+		<link type="text/css" href="<%= $css %>" rel="stylesheet"/>
+		<script type="text/javascript"
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"
+		/></script>
+		<script type="text/javascript" src="<%= $js %>"/></script>
+		<script type="text/javascript" src="<%= $theme %>"/></script>
+		<script language="javascript">
+			$(document).ready(
+				function(){
+					$("#gallery").galleria(
+						{
+							width: 500, 
+							height: 500
+						});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="gallery">
+				% for my $img (@{$arg->{images}}) {
+						<img src="<%= $img %>">
+				% }	
+		</div>
+	</body>
+</html>

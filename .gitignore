@@ -1,11 +1,16 @@
-cover_db
-META.yml
-Makefile
+#Perl's build specific stuff
+Build
+_blib
 blib
-inc
-pm_to_blib
-MANIFEST
-Makefile.old
-nytprof.out
-MANIFEST.bak
-*.sw[po]
+_build
+MANIFEST*
+MYMETA*
+META*
+tmp
+log
+*DS_Store*
+data
+local
+
+#exclude Build.PL
+!Build.PL
