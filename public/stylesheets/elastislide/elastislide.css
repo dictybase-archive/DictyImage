@@ -1,6 +1,7 @@
 /* Elastislide Style */
 .es-carousel-wrapper{
-	background: #101010;
+	/*background: #101010; */
+	background: #D4D0C8;
 	padding:10px 27px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -14,7 +15,7 @@
 }
 .es-carousel{
 	overflow:hidden;
-	background:#000;
+	background:#D4D0C8;
 }
 .es-carousel ul{
 	display:none;
@@ -51,7 +52,7 @@
 	position:absolute;
 	top:50%;
 	left:8px;
-	background:transparent url(../images/nav_thumbs.png) no-repeat top left;
+	background:transparent url(../../images/nav_thumbs.png) no-repeat top left; 
 	width:14px;
 	height:26px;
 	margin-top:-13px;
