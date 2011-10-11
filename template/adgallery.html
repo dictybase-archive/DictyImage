@@ -1,0 +1,49 @@
+% my ($arg) = @_;
+% my $css_folder = $arg->{css_folder} || '/stylesheets';
+% my $js_folder = $arg->{js_folder} || '/javascripts';
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> DictyBase Image gallery </title>
+
+		% for my $css(('dicty_style.css',  'jquery.ad-gallery.css')) {
+				<link type="text/css" href="<%= $css_folder %>/<%= $css %>" rel="stylesheet"/>
+		% }
+
+		<script type="text/javascript"
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" /></script>
+		<script type="text/javascript" src="<%= $js_folder %>/jquery.ad-gallery.js"/></script>
+		<script language="javascript">
+			$(document).ready(
+				function(){
+						$('.ad-gallery').adGallery(
+							{
+								loader_image: 'public/images/adgallery/loader.gif'
+							}
+						);	
+			});
+		</script>
+	</head>
+	<body>
+		<div id="gallery" class="ad-gallery">
+			<div class="ad-image-wrapper">
+			</div>
+			<div class="ad-controls">
+			</div>
+			<div class="ad-nav">
+			  <div class="ad-thumbs">
+			    <ul class="ad-thumb-list">
+			    		% for my $img(@{$arg->{images}}) {
+			    			 <li>
+			    			 	<a href="<%= $img->{medium} %>">
+			    			 		<img src="<%= $img->{thumb} %>">
+									</a>
+									</li>
+			    		% }
+			    </ul>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
