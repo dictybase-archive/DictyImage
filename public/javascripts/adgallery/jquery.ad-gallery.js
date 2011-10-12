@@ -346,7 +346,9 @@
               last_height = list.height();
               i++;
             }
-            clearInterval(inter);
+            if (list.width() < 5000) {
+            	list.width(6000);
+            }
           };
         },
         100
