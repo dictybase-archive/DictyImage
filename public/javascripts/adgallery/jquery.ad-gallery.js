@@ -349,6 +349,7 @@
             if (list.width() < 5000) {
             	list.width(6000);
             }
+            clearInterval(inter);
           };
         },
         100
