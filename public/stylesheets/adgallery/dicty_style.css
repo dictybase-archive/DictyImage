@@ -1,16 +1,19 @@
-* {
+/* {
     font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Arial, sans-serif;
     color: #333;
     line-height: 140%;
-  }
+  } */
+
   select, input, textarea {
     font-size: 1em;
   }
-  body {
+
+  /*body {
     padding: 30px;
     font-size: 70%;
     width: 800px;
-  }
+  }*/
+
   h2 {
     margin-top: 1.2em;
     margin-bottom: 0;
@@ -27,9 +30,11 @@
     background: #f2f2f2;
     padding: 10px;
   }
-  ul {
+
+  /*ul {
     list-style-image:url(list-style.gif);
-  }
+  }*/
+
   pre {
     font-family: "Lucida Console", "Courier New", Verdana;
     border: 1px solid #CCC;
@@ -55,10 +60,10 @@
     padding: 10px;
     overflow: hidden;
   }
-    #descriptions .ad-image-description {
+  #descriptions .ad-image-description {
       position: absolute;
-    }
-      #descriptions .ad-image-description .ad-description-title {
+  }
+  #descriptions .ad-image-description .ad-description-title {
         display: block;
-      }
+  }
 

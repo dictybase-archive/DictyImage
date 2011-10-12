@@ -1,0 +1,20 @@
+% my ($arg) = @_;
+	<div id="gallery" class="ad-gallery">
+			<div class="ad-image-wrapper">
+			</div>
+			<div class="ad-controls">
+			</div>
+			<div class="ad-nav">
+			  <div class="ad-thumbs">
+			    <ul class="ad-thumb-list">
+			    		% for my $img(@{$arg->{images}}) {
+			    			 <li>
+			    			 	<a href="<%= $img->{medium} %>">
+			    			 		<img src="<%= $img->{thumb} %>">
+									</a>
+									</li>
+			    		% }
+			    </ul>
+				</div>
+			</div>
+		</div>
