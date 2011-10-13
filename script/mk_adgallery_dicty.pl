@@ -27,8 +27,8 @@ pod2usage("no image folder given") if !$ARGV[0];
 # -- web server path for images
 my $image_path = '/images/conference/' . $year;
 
-my $css_folder   = catfile( $asset_folder, 'stylesheets', 'adgallery' );
-my $js_folder    = catfile( $asset_folder, 'javascripts', 'adgallery' );
+my $css_folder   = catfile( $asset_folder, 'stylesheets' );
+my $js_folder    = catfile( $asset_folder, 'javascripts');
 
 my $writer = IO::File->new($output,  'w') or die "cannot open file for writing:$!";
 

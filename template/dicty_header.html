@@ -1,6 +1,8 @@
 % my ($arg) = @_;
-% my $css_folder = $arg->{css_folder} || '/inc/stylesheets/adgallery';
-% my $js_folder = $arg->{js_folder} || '/inc/javascripts/adgallery';
+% my $css_folder = $arg->{css_folder} || '/inc/stylesheets';
+% my $js_folder = $arg->{js_folder} || '/inc/javascripts';
+% my $adgallery_name = $arg->{adgallery} || 'adgallery';
+% my $slimbox_name = $arg->{slimbox} || 'slimbox2';
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
@@ -15,9 +17,14 @@
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
+			<!--- adgallery css -->
 			% for my $css(('dicty_style.css',  'jquery.ad-gallery.css')) {
-				<link type="text/css" href="<%= $css_folder %>/<%= $css %>" rel="stylesheet"/>
+				<link type="text/css" href="<%= $css_folder %>/<%= $adgallery_name %>/<%= $css %>" rel="stylesheet"/>
 			% }
+
+			<!--- slimbox2 css -->
+			<link type="text/css" href="<%= $css_folder %>/<%= $slimbox_name %>/slimbox2.css"
+			rel="stylesheet" />
 
 			<style type="text/css">
 p {
@@ -50,13 +57,14 @@ YAHOO.util.Event.addFocusListener(searchInput.id, function() {
 </script>
 <script type="text/javascript"
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" /></script>
-		<script type="text/javascript" src="<%= $js_folder %>/jquery.ad-gallery.js"/></script>
+		<script type="text/javascript" src="<%= $js_folder %>/<%= $adgallery_name %>/jquery.ad-gallery.js"/></script>
+		<script type="text/javascript" src="<%= $js_folder %>/<%= $slimbox_name %>/slimbox2.js"/></script>
 		<script language="javascript">
 			$(document).ready(
 				function(){
 						$('.ad-gallery').adGallery(
 							{
-								loader_image: '/inc/images/adgallery/loader.gif'
+								loader_image: '/inc/images/adgallery/loader.gif', 
 							}
 						);	
 
