@@ -10,9 +10,10 @@
 
   /*body {
     padding: 30px;
-    font-size: 70%;
-    width: 800px;
+   font-size: 70%; 
+   width: 800px; 
   }*/
+
 
   h2 {
     margin-top: 1.2em;
@@ -49,7 +50,7 @@
 
   #gallery {
     padding: 30px;
-    background: #e1eef5;
+    background: white;
   }
   #descriptions {
     position: relative;
@@ -66,4 +67,5 @@
   #descriptions .ad-image-description .ad-description-title {
         display: block;
   }
+
 
